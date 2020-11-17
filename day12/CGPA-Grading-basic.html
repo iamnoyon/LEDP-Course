@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <title>CGPA Grading System using JS(Basic)</title>
+</head>
+<body>
+    <div class="container p-2">
+        <fieldset class="border border-dark p-5">
+            <legend class="w-auto">CGPA Grading system using JS(Basic, Using If/Else Only)</legend>
+                <p style="text-align: right;">* Required Fields</p>
+
+            <form>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col col-2">
+                            <label for="subject1">Subject 1*</label>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" id="marksub1" placeholder="Enter the mark of subject 1" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col col-2">
+                            <label for="subject2">Subject 2*</label>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" id="marksub2" placeholder="Enter the mark of subject 2" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col col-2">
+                            <label for="subject3">Subject 3*</label>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" id="marksub3" placeholder="Enter the mark of subject 3" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col col-2">
+                            <label for="subject4">Subject 4*</label>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" id="marksub4" placeholder="Enter the mark of subject 4" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col col-2">
+                            <label for="subject5">Subject 5*</label>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" id="marksub5" placeholder="Enter the mark of subject 5" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col col-2">
+                            <label for="subject6">Subject 6*</label>
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" id="marksub6" placeholder="Enter the mark of subject 6" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col col-2">
+                            <button class="btn btn-primary" type="button" onclick="showCGPA()">View CGPA</button>
+                        </div>
+                        <div class="col col-8">
+                            <h3 class="rounded-circle bg-warning pt-2 pb-2 text-center" id="show">Your CGPA will appear here</h3>
+                        </div>
+                        <div class="col col-2">
+                            <button class="btn btn-danger" type="reset">Reset Form</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <script type="text/javascript">
+        function showCGPA(){
+//declaring variables for marks and getting input from input form
+            var sub1mark = Number(document.getElementById('marksub1').value);
+            var sub2mark = Number(document.getElementById('marksub2').value);
+            var sub3mark = Number(document.getElementById('marksub3').value);
+            var sub4mark = Number(document.getElementById('marksub4').value);
+            var sub5mark = Number(document.getElementById('marksub5').value);
+            var sub6mark = Number(document.getElementById('marksub6').value);
+
+//declaring variables for subject gpa;
+            var sub1gpa,sub2gpa,sub3gpa,sub4gpa,sub5gpa,sub6gpa;
+
+//getting subject1 gpa from marks>> beginning
+
+            if(sub1mark<0 || sub1mark>100){
+                //mark less than 0 or greater tha 100 is not available
+                return document.getElementById('show').innerHTML = "Mark is out of range";
+            }
+            else if(sub1mark>=80 && sub1mark<=100){
+                sub1gpa = 4.00;
+            }
+            else if(sub1mark>=75 && sub1mark<80){
+                sub1gpa = 3.75;
+            }
+            else if(sub1mark>=70 && sub1mark<75){
+                sub1gpa = 3.50;
+            }
+            else if(sub1mark>=65 && sub1mark<70){
+                sub1gpa = 3.25;
+            }
+            else if(sub1mark>=60 && sub1mark<65){
+                sub1gpa = 3.00;
+            }
+            else if(sub1mark>=55 && sub1mark<60){
+                sub1gpa = 2.75;
+            }
+            else if(sub1mark>=50 && sub1mark<55){
+                sub1gpa = 2.50;
+            }
+            else if(sub1mark>=45 && sub1mark<50){
+                sub1gpa = 2.25;
+            }
+            else if(sub1mark>=40 && sub1mark<45){
+                sub1gpa = 2.00;
+            }
+            else if(sub1mark>=0 && sub1mark<40){
+                //mark in between 0-39 is failed
+                return document.getElementById('show').innerHTML = "You are failed";
+            }
+//getting subject1 gpa from marks>> end
+
+//getting subject2 gpa from marks>> beginning
+            if(sub2mark<0 || sub2mark>100){
+                //mark less than 0 or greater tha 100 is not available
+                return document.getElementById('show').innerHTML = "Mark is out of range";
+            }
+            else if(sub2mark>=80 && sub2mark<=100){
+                sub2gpa = 4.00;
+            }
+            else if(sub2mark>=75 && sub2mark<80){
+                sub2gpa = 3.75;
+            }
+            else if(sub2mark>=70 && sub2mark<75){
+                sub2gpa = 3.50;
+            }
+            else if(sub2mark>=65 && sub2mark<70){
+                sub2gpa = 3.25;
+            }
+            else if(sub2mark>=60 && sub2mark<65){
+                sub2gpa = 3.00;
+            }
+            else if(sub2mark>=55 && sub2mark<60){
+                sub2gpa = 2.75;
+            }
+            else if(sub2mark>=50 && sub2mark<55){
+                sub2gpa = 2.50;
+            }
+            else if(sub2mark>=45 && sub2mark<50){
+                sub2gpa = 2.25;
+            }
+            else if(sub2mark>=40 && sub2mark<45){
+                sub2gpa = 2.00;
+            }
+            else if(sub2mark>=0 && sub2mark<40){
+                //mark in between 0-39 is failed
+                return document.getElementById('show').innerHTML = "You are failed";
+            }
+//getting subject2 gpa from marks>> end
+
+//getting subject3 gpa from marks>> beginning
+            if(sub3mark<0 || sub3mark>100){
+                //mark less than 0 or greater tha 100 is not available
+                return document.getElementById('show').innerHTML = "Mark is out of range";
+            }
+            else if(sub3mark>=80 && sub3mark<=100){
+                sub3gpa = 4.00;
+            }
+            else if(sub3mark>=75 && sub3mark<80){
+                sub3gpa = 3.75;
+            }
+            else if(sub3mark>=70 && sub3mark<75){
+                sub3gpa = 3.50;
+            }
+            else if(sub3mark>=65 && sub3mark<70){
+                sub3gpa = 3.25;
+            }
+            else if(sub3mark>=60 && sub3mark<65){
+                sub3gpa = 3.00;
+            }
+            else if(sub3mark>=55 && sub3mark<60){
+                sub3gpa = 2.75;
+            }
+            else if(sub3mark>=50 && sub3mark<55){
+                sub3gpa = 2.50;
+            }
+            else if(sub3mark>=45 && sub3mark<50){
+                sub3gpa = 2.25;
+            }
+            else if(sub3mark>=40 && sub3mark<45){
+                sub3gpa = 2.00;
+            }
+            else if(sub3mark>=0 && sub3mark<40){
+                //mark in between 0-39 is failed
+                return document.getElementById('show').innerHTML = "You are failed";
+            }
+//getting subject3 gpa from marks>> end
+
+//getting subject4 gpa from marks>> beginning
+            if(sub4mark<0 || sub4mark>100){
+                //mark less than 0 or greater tha 100 is not available
+                return document.getElementById('show').innerHTML = "Mark is out of range";
+            }
+            else if(sub4mark>=80 && sub4mark<=100){
+                sub4gpa = 4.00;
+            }
+            else if(sub4mark>=75 && sub4mark<80){
+                sub4gpa = 3.75;
+            }
+            else if(sub4mark>=70 && sub4mark<75){
+                sub4gpa = 3.50;
+            }
+            else if(sub4mark>=65 && sub4mark<70){
+                sub4gpa = 3.25;
+            }
+            else if(sub4mark>=60 && sub4mark<65){
+                sub4gpa = 3.00;
+            }
+            else if(sub4mark>=55 && sub4mark<60){
+                sub4gpa = 2.75;
+            }
+            else if(sub4mark>=50 && sub4mark<55){
+                sub4gpa = 2.50;
+            }
+            else if(sub4mark>=45 && sub4mark<50){
+                sub4gpa = 2.25;
+            }
+            else if(sub4mark>=40 && sub4mark<45){
+                sub4gpa = 2.00;
+            }
+            else if(sub4mark>=0 && sub4mark<40){
+                //mark in between 0-39 is failed
+                return document.getElementById('show').innerHTML = "You are failed";
+            }
+//getting subject4 gpa from marks>> end
+
+//getting subject5 gpa from marks>> beginning
+            if(sub5mark<0 || sub5mark>100){
+                //mark less than 0 or greater tha 100 is not available
+                return document.getElementById('show').innerHTML = "Mark is out of range";
+            }
+            else if(sub5mark>=80 && sub5mark<=100){
+                sub5gpa = 4.00;
+            }
+            else if(sub5mark>=75 && sub5mark<80){
+                sub5gpa = 3.75;
+            }
+            else if(sub5mark>=70 && sub5mark<75){
+                sub5gpa = 3.50;
+            }
+            else if(sub5mark>=65 && sub5mark<70){
+                sub5gpa = 3.25;
+            }
+            else if(sub5mark>=60 && sub5mark<65){
+                sub5gpa = 3.00;
+            }
+            else if(sub5mark>=55 && sub5mark<60){
+                sub5gpa = 2.75;
+            }
+            else if(sub5mark>=50 && sub5mark<55){
+                sub5gpa = 2.50;
+            }
+            else if(sub5mark>=45 && sub5mark<50){
+                sub5gpa = 2.25;
+            }
+            else if(sub5mark>=40 && sub5mark<45){
+                sub5gpa = 2.00;
+            }
+            else if(sub5mark>=0 && sub5mark<40){
+                //mark in between 0-39 is failed
+                return document.getElementById('show').innerHTML = "You are failed";
+            }
+//getting subject5 gpa from marks>> end
+
+//getting subject6 gpa from marks>> beginning
+            if(sub6mark<0 || sub6mark>100){
+                //mark less than 0 or greater tha 100 is not available
+                return document.getElementById('show').innerHTML = "Mark is out of range";
+            }
+            else if(sub6mark>=80 && sub6mark<=100){
+                sub6gpa = 4.00;
+            }
+            else if(sub6mark>=75 && sub6mark<80){
+                sub6gpa = 3.75;
+            }
+            else if(sub6mark>=70 && sub6mark<75){
+                sub6gpa = 3.50;
+            }
+            else if(sub6mark>=65 && sub6mark<70){
+                sub6gpa = 3.25;
+            }
+            else if(sub6mark>=60 && sub6mark<65){
+                sub6gpa = 3.00;
+            }
+            else if(sub6mark>=55 && sub6mark<60){
+                sub6gpa = 2.75;
+            }
+            else if(sub6mark>=50 && sub6mark<55){
+                sub6gpa = 2.50;
+            }
+            else if(sub6mark>=45 && sub6mark<50){
+                sub6gpa = 2.25;
+            }
+            else if(sub6mark>=40 && sub6mark<45){
+                sub6gpa = 2.00;
+            }
+            else if(sub6mark>=0 && sub6mark<40){
+                //mark in between 0-39 is failed
+                return document.getElementById('show').innerHTML = "You are failed";
+            }
+//getting subject6 gpa from marks>> end
+
+            //counting total gpa
+            var totalgpa= sub1gpa+sub2gpa+sub3gpa+sub4gpa+sub5gpa+sub6gpa; 
+            var mainCGPA = totalgpa/6;
+            //showing cgpa
+            return document.getElementById('show').innerHTML = "Your CGPA is: "+mainCGPA; 
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

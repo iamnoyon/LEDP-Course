@@ -1,0 +1,35 @@
+
+.nature-container{
+    width: 32%;
+    height: 370px;
+    float: left;
+    border: 3px solid red;
+    margin: 3px;
+    
+}
+.nature{
+    width: 100%;
+    height: 340px;
+    border: 2px dotted #005f34;
+}
+img{
+    height: 340px;
+    width: 100%;
+}
+h2{
+    padding: 0px;
+    margin: 0px;
+    background-color: rosybrown;
+    text-align: center;
+}
+h1{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    background-color: slategray;
+}
+.nature:hover{
+    border: 2px solid red;
+    transform: scale(2);
+    transition: 1s;
+}
