@@ -1,0 +1,43 @@
+.navbar{
+    background: #107249;
+}
+.nav-link, .navbar-brand{
+    color: #dbdbdb;
+    cursor: pointer;
+}
+.navbar-link{
+    margin-right: 1em !important;
+}
+.navbar-link:hover{
+    background: #ffffff;
+    color: tomato;
+}
+.navbar-collapse{
+    justify-content: flex-end;
+}
+.navbar-toggler{
+    background: #fff !important;
+}
+.navbar-toggler-icon{
+    color: #000;
+    padding: 5px;
+}
+
+header{
+    background-image:url(../img/img5.jpg) ;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+.overlay{
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(244, 244, 244, 0.25);
+}
+.description{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
